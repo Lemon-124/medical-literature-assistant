@@ -1,6 +1,6 @@
 # 核心框架
-streamlit>=1.27.0,<2.0.0
-pandas>=1.5.0,<3.0.0
+streamlit==1.24.1
+pandas>2.0
 
 # LangChain 生态
 langchain>=0.1.0,<2.0.0
@@ -23,5 +23,4 @@ dashscope>=1.14.0,<2.0.0
 diskcache>=5.0.0,<6.0.0
 
 # 必要的基础依赖
-numpy>=1.21.0,<2.0.0
 pydantic>=1.10.0,<3.0.0
