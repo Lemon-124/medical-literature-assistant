@@ -6,10 +6,29 @@ from ui.ui_components import (
 )
 from utils.config import APP_CONFIG
 import os
+import sys
 
-# 云端环境适配
-if 'STREAMLIT_CLOUD' in os.environ:
-    st.info("运行在Streamlit Cloud环境中")
+# 检测是否在Streamlit Cloud环境中
+def is_streamlit_cloud():
+    return 'STREAMLIT_SERVER' in os.environ or 'STREAMLIT_RUNTIME' in os.environ
+
+# 云端环境下的依赖处理
+if is_streamlit_cloud():
+    try:
+        import chromadb
+        # 使用简化模式
+        USE_CHROMA = False
+    except ImportError:
+        USE_CHROMA = False
+    
+    try:
+        import pdfplumber
+        USE_PDFPLUMBER = True
+    except ImportError:
+        USE_PDFPLUMBER = False
+else:
+    USE_CHROMA = True
+    USE_PDFPLUMBER = True
     
 
 # 设置页面配置
