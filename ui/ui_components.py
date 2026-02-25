@@ -1,10 +1,7 @@
 """Streamlit UI组件"""
 
-import os
-import sys
 import streamlit as st
-from typing import List, Dict, Any
-from utils.config import MODEL_OPTIONS, ANALYSIS_TYPES
+from utils.config import  ANALYSIS_TYPES
 
 def render_sidebar():
     """渲染侧边栏配置"""

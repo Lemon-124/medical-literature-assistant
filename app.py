@@ -1,4 +1,3 @@
-import os
 import streamlit as st
 from models.literature_assistant import LiteratureReviewAssistant
 from ui.ui_components import (

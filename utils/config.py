@@ -1,26 +1,11 @@
 """医学文献综述助手配置文件"""
 
-import os
-from typing import List, Dict, Any
-
 # 应用基本信息
 APP_CONFIG = {
-    "title": "医学文献综述助手",
+    "title": "医学文献写作助手",
     "icon": "📚",
     "layout": "wide"
 }
-
-# 支持的文件类型
-SUPPORTED_FILE_TYPES = ['pdf']
-
-# 模型配置
-MODEL_OPTIONS = [
-    "qwen3-max", 
-    "qwen3-ultra", 
-    "qwen-max", 
-    "qwen3-7b", 
-    "qwen3-14b"
-]
 
 # 文档处理参数
 PROCESSING_CONFIG = {
