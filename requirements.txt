@@ -1,5 +1,4 @@
-pip --upgrade
-setuptools>=65.0.0
+setuptools>=70.0.0
 wheel
 
 # 核心框架
