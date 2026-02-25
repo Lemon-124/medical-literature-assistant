@@ -1,10 +1,11 @@
+import os
 import streamlit as st
 from models.literature_assistant import LiteratureReviewAssistant
 from ui.ui_components import (
     render_sidebar, render_file_upload, 
     render_results_table, render_qa_interface, render_analysis_interface
 )
-from config import APP_CONFIG
+from utils.config import APP_CONFIG
 
 # 设置页面配置
 st.set_page_config(

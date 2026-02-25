@@ -5,9 +5,9 @@ secondaryBackgroundColor="#f0f2f6"
 textColor="#262730"
 
 [server]
-port=8501
+port=8502
 enableCORS=false
-enableXsrfProtection=true
+enableXsrfProtection=false
 
 [browser]
 gatherUsageStats=false

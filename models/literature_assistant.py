@@ -1,5 +1,6 @@
 """医学文献处理核心模型"""
 
+import os
 import tempfile
 import hashlib
 import json
@@ -18,16 +19,7 @@ from langchain_community.chat_models.tongyi import ChatTongyi
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.documents import Document
-
-import os
-import sys
-# 添加项目根目录到路径
-current_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.dirname(current_dir)
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
-from config import PROCESSING_CONFIG, TABLE_COLUMNS
+from utils.config import PROCESSING_CONFIG, TABLE_COLUMNS
 
 
 
@@ -124,20 +116,22 @@ class LiteratureReviewAssistant:
         # 1. 基础清理
         content = re.sub(r'\s+', ' ', doc_content.strip())
     
-        # 2. 如果文本过长，启动智能处理
+        # 2. 初始化关键部分列表
+        key_sections = []
+
+        # 3. 如果文本过长，启动智能处理
         if len(content) > 10000:  
-            key_sections = []
         
-        # 3. 按优先级提取关键部分
-        section_priority = [
-            r'(abstract|摘要).*?(?=\n\n(?:introduction|引言|method|方法|background|背景))',
-            r'(introduction|引言).*?(?=\n\n(?:method|方法|materials|材料|study design|研究设计))',
-            r'(method|方法|materials|材料).*?(?=\n\n(?:result|结果|findings|发现|analysis|分析))',
-            r'(result|结果|findings|发现).*?(?=\n\n(?:discussion|讨论|conclusion|结论))',
-            r'(discussion|讨论|conclusion|结论).*?(?=\n\n(?:reference|参考文献|acknowledgment|致谢))'
-        ]
+            # 4. 按优先级提取关键部分
+            section_priority = [
+                r'(abstract|摘要).*?(?=\n\n(?:introduction|引言|method|方法|background|背景))',
+                r'(introduction|引言).*?(?=\n\n(?:method|方法|materials|材料|study design|研究设计))',
+                r'(method|方法|materials|材料).*?(?=\n\n(?:result|结果|findings|发现|analysis|分析))',
+                r'(result|结果|findings|发现).*?(?=\n\n(?:discussion|讨论|conclusion|结论))',
+                r'(discussion|讨论|conclusion|结论).*?(?=\n\n(?:reference|参考文献|acknowledgment|致谢))'
+            ]
         
-        # 4. 提取各关键部分
+        # 5. 提取各关键部分
         for pattern in section_priority:
             match = re.search(pattern, content, re.IGNORECASE | re.DOTALL)
             if match:
@@ -146,12 +140,12 @@ class LiteratureReviewAssistant:
                 if len(section_content) > 100:
                     key_sections.append(section_content)
         
-        # 5. 智能重组策略
+        # 6. 智能重组策略
         if key_sections:
             # 按重要性排序并组合
             processed_content = '\n\n'.join(key_sections)
             
-            # 6. 长度控制
+            # 7. 长度控制
             max_length = PROCESSING_CONFIG.get("max_content_length", 15000)
             if len(processed_content) > max_length:
                 # 保留前几个最重要部分
@@ -175,7 +169,7 @@ class LiteratureReviewAssistant:
             # 未找到明确结构，智能截断
             processed_content = content[:PROCESSING_CONFIG.get("max_content_length", 15000)]
             
-            # 7. 最终清理
+            # 8. 最终清理
             processed_content = re.sub(r'\s+', ' ', processed_content).strip()
     
         return processed_content

@@ -1,10 +1,29 @@
-streamlit>=1.31.0,<2.0.0
-langchain-community>=0.2.10,<1.0.0
-langchain-text-splitters>=0.2.0,<1.0.0
-langchain-chroma>=0.1.2,<1.0.0
-pandas>=2.0.3,<3.0.0
-python-docx>=0.8.11,<1.0.0
-pypdf>=4.0.0,<5.0.0
-dashscope>=1.19.1,<2.0.0
-diskcache>=5.6.3,<6.0.0
-pdfplumber>=0.10.0,<1.0.0
+# 核心框架
+streamlit==1.54.0
+pandas==2.3.3
+
+# LangChain 生态
+langchain==1.2.0
+langchain-core==1.2.14
+langchain-community==0.4.1
+langchain-text-splitters==1.1.1
+langchain-chroma==0.2.6
+
+# 向量数据库
+chromadb==1.5.0
+
+# 文档处理
+python-docx==0.8.11
+pypdf==4.3.1
+pdfplumber==0.11.9
+
+# 阿里云大模型服务
+dashscope==1.25.11
+
+# 缓存和其他工具
+diskcache==5.6.3
+
+# 必要的基础依赖
+numpy==2.3.4
+pydantic==2.12.5
+pandas==2.3.3

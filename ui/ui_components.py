@@ -4,14 +4,7 @@ import os
 import sys
 import streamlit as st
 from typing import List, Dict, Any
-
-# 添加项目根目录到路径
-current_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.dirname(current_dir)
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
-from config import MODEL_OPTIONS, ANALYSIS_TYPES
+from utils.config import MODEL_OPTIONS, ANALYSIS_TYPES
 
 def render_sidebar():
     """渲染侧边栏配置"""
