@@ -9,11 +9,9 @@ pandas>=2.0.0
 langchain>=0.1.0,<0.2.0
 langchain-core>=0.1.0,<0.2.0
 langchain-community>=0.0.10,<0.1.0
-langchain-text-splitters>=0.1.0,<0.2.0
-# 注释掉 langchain-chroma，用下面的方式替代
-# langchain-chroma>=0.1.0,<1.0.0
+langchain-text-splitters>=0.2.0,<0.3.0  # 修复这里！
 
-# 向量数据库 - 固定一个稳定版本
+# 向量数据库
 chromadb==0.4.22
 
 # 文档处理
