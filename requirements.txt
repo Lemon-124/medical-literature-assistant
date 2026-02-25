@@ -1,28 +1,27 @@
 # 核心框架
-streamlit==1.54.0
-pandas==2.3.3
+streamlit>=1.27.0,<2.0.0
+pandas>=1.5.0,<3.0.0
 
 # LangChain 生态
-langchain==1.2.0
-langchain-core==1.2.14
-langchain-community==0.4.1
-langchain-text-splitters==1.1.1
-langchain-chroma==0.2.6
+langchain>=0.1.0,<2.0.0
+langchain-core>=0.1.0,<2.0.0
+langchain-community>=0.0.10,<1.0.0
+langchain-text-splitters>=0.0.1,<1.0.0
+langchain-chroma>=0.1.0,<1.0.0
 
 # 向量数据库
-chromadb==1.5.0
+chromadb>=0.4.0,<1.0.0
 
 # 文档处理
-pypdf==4.3.1
-pdfplumber==0.11.9
+pypdf>=3.0.0,<5.0.0
+pdfplumber>=0.10.0,<1.0.0
 
 # 阿里云大模型服务
-dashscope==1.25.11
+dashscope>=1.14.0,<2.0.0
 
 # 缓存和其他工具
-diskcache==5.6.3
+diskcache>=5.0.0,<6.0.0
 
 # 必要的基础依赖
-numpy==2.3.4
-pydantic==2.12.5
-pandas==2.3.3
+numpy>=1.21.0,<2.0.0
+pydantic>=1.10.0,<3.0.0
