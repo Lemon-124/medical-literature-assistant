@@ -4,10 +4,17 @@ backgroundColor="#ffffff"
 secondaryBackgroundColor="#f0f2f6"
 textColor="#262730"
 
+[client]
+showErrorDetails = false
+
+[runner]
+fastReruns = true
+
 [server]
 port=8502
 enableCORS=false
-enableXsrfProtection=false
+runOnSave = true
+enableXsrfProtection = true
 
 [browser]
-gatherUsageStats=false
+gatherUsageStats = true
