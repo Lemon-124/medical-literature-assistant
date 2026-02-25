@@ -1,3 +1,5 @@
+setuptools
+
 # 核心框架
 streamlit==1.24.1
 pandas>=1.5.0,<2.0.0
