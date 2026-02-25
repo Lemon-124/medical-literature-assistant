@@ -5,6 +5,12 @@ from ui.ui_components import (
     render_results_table, render_qa_interface, render_analysis_interface
 )
 from utils.config import APP_CONFIG
+import os
+
+# 云端环境适配
+if 'STREAMLIT_CLOUD' in os.environ:
+    st.info("运行在Streamlit Cloud环境中")
+    
 
 # 设置页面配置
 st.set_page_config(
