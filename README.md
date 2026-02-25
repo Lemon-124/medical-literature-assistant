@@ -11,7 +11,7 @@
 
 ## 🚀 快速开始
 
-1. 访问应用网址：[您的部署链接]
+1. 访问应用网址：https://medical-literature-assistant-o3cfxjbbds3qqvcebvda9v.streamlit.app/
 2. 在左侧边栏输入您的通义千问API Key
 3. 上传PDF格式的医学文献
 4. 等待系统处理完成后查看分析结果
@@ -27,7 +27,7 @@
 
 ### 系统要求
 - 支持的文件格式：PDF
-- 建议文件大小：单个文件不超过50MB
+- 建议文件大小：单个文件不超过5MB
 - 需要有效的通义千问API Key
 
 ### 功能介绍
