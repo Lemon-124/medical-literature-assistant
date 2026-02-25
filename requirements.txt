@@ -1,4 +1,4 @@
-setuptools
+setuptools>=65.0.0
 
 # 核心框架
 streamlit==1.24.1
