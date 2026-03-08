@@ -26,7 +26,7 @@ from utils.config import PROCESSING_CONFIG, TABLE_COLUMNS
 class LiteratureReviewAssistant:
     """医学文献综述助手核心类"""
     
-    def __init__(self, api_key: str, model_name: str = "qwen3-max"):
+    def __init__(self, api_key: str, model_name: str = "qwen-max"):
         """
         初始化助手
         """
