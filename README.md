@@ -13,7 +13,7 @@
 
 ## 🚀 快速开始
 
-1. 访问应用网址：https://medical-literature-assistant-5hdks9anyvmrkjncxir6zf.streamlit.app/
+1. 访问应用网址：https://medical-literature-assistant-b4p8wyvkcqfjcfbnvofspa.streamlit.app/
 2. 在左侧边栏输入您的通义千问API Key
 3. 上传PDF格式的医学文献
 4. 等待系统处理完成后查看分析结果
