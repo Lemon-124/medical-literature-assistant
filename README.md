@@ -11,13 +11,6 @@
 - **交互式问答**：基于文献内容进行智能问答
 - **综合分析**：提供研究方法汇总、结论对比等深度分析
 
-## 🚀 快速开始
-
-1. 访问应用网址：https://medical-literature-assistant-b4p8wyvkcqfjcfbnvofspa.streamlit.app/
-2. 在左侧边栏输入您的通义千问API Key
-3. 上传PDF格式的医学文献
-4. 等待系统处理完成后查看分析结果
-
 ## 📸 界面操作指南
 
 ![主界面](screenshots/main_page.png)
